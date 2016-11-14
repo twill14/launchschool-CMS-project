@@ -1,0 +1,8 @@
+ <% if session[:failure]%>
+    <p id="failure"><%= session.delete(:failure)%></p>
+ <% end %>
+
+ <%if session[:success] %>
+   <p id="update"><%= session.delete(:success)%></p>
+ <% end %>
+ 

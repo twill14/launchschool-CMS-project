@@ -1,0 +1,33 @@
+  <% if session[:failure]%>
+    <p id="failure"><%= session.delete(:failure)%></p>
+  <% end %>
+
+  <%if session[:success] %>
+   <p id="update"><%= session.delete(:success)%></p>
+  <% end %>
+
+<ul>
+ <% @files.each do |file| %>
+ <li> 
+      <a href="/<%= file%>"> <%= file %></a> 
+      <p><a href="/<%= file %>/edit">Edit: <%= file%></a></p>
+      <p><a href="/<%= file %>/duplicate">Copy: <%= file%></a></p>
+     <form method="post" action="/<%= file %>/delete">
+       <button type="submit">Delete</button>
+     </form>
+ </li>
+ <% end %>
+</ul>
+
+<p> <a href ="/new">New Document</a></p>
+
+<% if session[:user] %>
+  <form method="post" action="/users/signout">
+    <p class="user-status">
+      Signed in as <%= session[:user] %>.
+      <button type="submit">Sign Out</button>
+    </p>
+  </form>
+<% else %>
+  <p class="user-status"><a href="/users/signin">Sign In</a></p>
+<% end %>

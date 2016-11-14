@@ -1,0 +1,15 @@
+
+<form method="post" action="/new">
+  <% if session[:failure]%>
+    <p id="failure"><%= session.delete(:failure)%></p>
+  <% end %>
+
+  <%if session[:success] %>
+   <p id="update"><%= session.delete(:success)%></p>
+  <% end %>
+  <label for="newfile">Add a new document:</label>
+  <div>
+  <input id="newfile" name="newfile">
+   <button type="submit">Create</button>
+  </div>
+</form>

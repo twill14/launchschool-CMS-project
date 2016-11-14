@@ -1,0 +1,23 @@
+body {
+  padding: 2em;
+  font-family: sans-serif;
+}
+
+#update {
+  background-color: yellow;
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 25px;
+}
+
+#failure {
+  background-color: red;
+   border-style: solid;
+  border-width: 5px;
+  border-radius: 25px;
+}
+
+.user-status{
+  font-family: arial;
+  padding: 3em;
+}
